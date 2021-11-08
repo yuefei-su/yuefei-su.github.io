@@ -808,7 +808,7 @@ color: #fff;}
 	/****Ipad Landscape 1024 Container 970 ****/
 	.main-nav{ display:block !important; }
 	/*.portfolioContainer{ width:800px; margin:0px auto !important; } */
-	/*.header-bg{max-width: 1518px; max-height:992px;}*/
+	.header-bg{max-width: 1792px; max-height:992px;}
 }
 
 @media only screen and (min-width: 768px) and (max-width: 991px) {
