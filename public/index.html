@@ -1,0 +1,1211 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+
+  
+  <title>Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta property="og:type" content="website">
+<meta property="og:title" content="Hexo">
+<meta property="og:url" content="http://example.com/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:locale" content="en_US">
+<meta property="article:author" content="John Doe">
+<meta name="twitter:card" content="summary">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+<meta name="generator" content="Hexo 5.4.1"><link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://example.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main">
+  
+    <article id="post-css/01" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2022/03/02/css/01/" class="article-date">
+  <time datetime="2022-03-01T16:00:00.000Z" itemprop="datePublished">2022-03-02</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/%E8%8B%8F%E8%B6%8A%E9%A3%9E/">苏越飞</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2022/03/02/css/01/">水平垂直居中</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <hr>
+<h2 id="水平垂直居中"><a href="#水平垂直居中" class="headerlink" title="水平垂直居中"></a>水平垂直居中</h2><h3 id="1-行内元素"><a href="#1-行内元素" class="headerlink" title="1. 行内元素"></a>1. 行内元素</h3><ul>
+<li>行内元素水平居中：<br>```css<br>.parent {<br>  text-align: center;<br>}</li>
+</ul>
+<pre><code>- 行内元素垂直居中：
+```css
+.son &#123;
+  vertical-align: middle;
+&#125;
+</code></pre>
+<ul>
+<li>行内元素垂直居中:子元素行高等于父元素高度<pre class=" language-css"><code class="language-css"><span class="token number">.</span>parent &amp;<span class="token hexcode">#123</span><span class="token punctuation">;</span>
+  <span class="token property">height</span><span class="token punctuation">:</span> 高度<span class="token punctuation">;</span>
+&amp;<span class="token hexcode">#125</span><span class="token punctuation">;</span>
+<span class="token number">.</span>son &amp;<span class="token hexcode">#123</span><span class="token punctuation">;</span>
+  <span class="token property">line-height</span><span class="token punctuation">:</span> 高度<span class="token punctuation">;</span>
+&amp;<span class="token hexcode">#125</span><span class="token punctuation">;</span>
+</code></pre>
+</li>
+</ul>
+<h3 id="1-块级元素"><a href="#1-块级元素" class="headerlink" title="1. 块级元素"></a>1. 块级元素</h3><ul>
+<li>居中元素（子元素）的宽高已知</li>
+<li>居中元素宽高未知<h4 id="（1）利用定位-margin-auto"><a href="#（1）利用定位-margin-auto" class="headerlink" title="（1）利用定位+margin:auto"></a>（1）利用定位+margin:auto</h4>父级设置相对定位，子级设置绝对定位。<strong>子级设置四个方向的值都为 0</strong>，<code>margin：auto</code>。子级没有设置宽高则被拉开到与父级一样宽高；<strong>子级设置宽高</strong>，对应方向实现平分，可以实现水平和垂直方向上的居中。<br>该方法适用于<strong>子盒子有宽高</strong>的情况<pre class=" language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>style</span><span class="token punctuation">></span></span><span class="token style language-css">
+  <span class="token number">.</span>father&amp;<span class="token hexcode">#123</span><span class="token punctuation">;</span>
+      <span class="token property">width</span><span class="token punctuation">:</span><span class="token number">500</span>px<span class="token punctuation">;</span>
+      <span class="token property">height</span><span class="token punctuation">:</span><span class="token number">300</span>px<span class="token punctuation">;</span>
+      <span class="token property">border</span><span class="token punctuation">:</span><span class="token number">1</span>px solid <span class="token hexcode">#0a3b98</span><span class="token punctuation">;</span>
+      <span class="token property">position</span><span class="token punctuation">:</span> relative<span class="token punctuation">;</span>
+  &amp;<span class="token hexcode">#125</span><span class="token punctuation">;</span>
+  <span class="token number">.</span>son&amp;<span class="token hexcode">#123</span><span class="token punctuation">;</span>
+      <span class="token property">width</span><span class="token punctuation">:</span><span class="token number">100</span>px<span class="token punctuation">;</span>
+      <span class="token property">height</span><span class="token punctuation">:</span><span class="token number">40</span>px<span class="token punctuation">;</span>
+      <span class="token property">background</span><span class="token punctuation">:</span> <span class="token hexcode">#f0a238</span><span class="token punctuation">;</span>
+      <span class="token property">position</span><span class="token punctuation">:</span> absolute<span class="token punctuation">;</span>
+      <span class="token property">top</span><span class="token punctuation">:</span><span class="token number">0</span><span class="token punctuation">;</span>
+      <span class="token property">left</span><span class="token punctuation">:</span><span class="token number">0</span><span class="token punctuation">;</span>
+      <span class="token property">right</span><span class="token punctuation">:</span><span class="token number">0</span><span class="token punctuation">;</span>
+      <span class="token property">bottom</span><span class="token punctuation">:</span><span class="token number">0</span><span class="token punctuation">;</span>
+      <span class="token property">margin</span><span class="token punctuation">:</span>auto<span class="token punctuation">;</span>
+  &amp;<span class="token hexcode">#125</span><span class="token punctuation">;</span>
+</span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>style</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>father<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>son<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span>
+</code></pre>
+</li>
+</ul>
+<h4 id="（2）利用定位-margin-负值"><a href="#（2）利用定位-margin-负值" class="headerlink" title="（2）利用定位+margin:负值"></a>（2）利用定位+margin:负值</h4><p>父级设置相对定位，子级设置绝对定位。子级先将元素的左上角起始原点通过 <code>top:50%</code>和 <code>left:50%</code>定位到页面的中心，然后再通过 <code>margin 负值</code>来调整元素的中心点到页面的中心。<br>该方法适用于<strong>子盒子宽高已知</strong>的情况  </p>
+<pre class=" language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>style</span><span class="token punctuation">></span></span><span class="token style language-css">
+    <span class="token number">.</span>father &amp;<span class="token hexcode">#123</span><span class="token punctuation">;</span>
+        <span class="token property">position</span><span class="token punctuation">:</span> relative<span class="token punctuation">;</span>
+        <span class="token property">width</span><span class="token punctuation">:</span> <span class="token number">200</span>px<span class="token punctuation">;</span>
+        <span class="token property">height</span><span class="token punctuation">:</span> <span class="token number">200</span>px<span class="token punctuation">;</span>
+        <span class="token property">background</span><span class="token punctuation">:</span> skyblue<span class="token punctuation">;</span>
+    &amp;<span class="token hexcode">#125</span><span class="token punctuation">;</span>
+    <span class="token number">.</span>son &amp;<span class="token hexcode">#123</span><span class="token punctuation">;</span>
+        <span class="token property">width</span><span class="token punctuation">:</span> <span class="token number">100</span>px<span class="token punctuation">;</span>
+        <span class="token property">height</span><span class="token punctuation">:</span> <span class="token number">100</span>px<span class="token punctuation">;</span>
+        <span class="token property">background</span><span class="token punctuation">:</span> red<span class="token punctuation">;</span>
+        <span class="token property">position</span><span class="token punctuation">:</span> absolute<span class="token punctuation">;</span>
+        <span class="token property">top</span><span class="token punctuation">:</span> <span class="token number">50%</span><span class="token punctuation">;</span>
+        <span class="token property">left</span><span class="token punctuation">:</span> <span class="token number">50%</span><span class="token punctuation">;</span>
+        <span class="token property">margin-left</span><span class="token punctuation">:</span>-<span class="token number">50</span>px<span class="token punctuation">;</span>   <span class="token comment" spellcheck="true">/* 自身 width 的一半 */</span>
+        <span class="token property">margin-top</span><span class="token punctuation">:</span>-<span class="token number">50</span>px<span class="token punctuation">;</span>  <span class="token comment" spellcheck="true">/* 自身 height 的一半 */</span>
+    &amp;<span class="token hexcode">#125</span><span class="token punctuation">;</span>
+</span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>style</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>father<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>son<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span>
+</code></pre>
+<h4 id="（3）利用定位-transform"><a href="#（3）利用定位-transform" class="headerlink" title="（3）利用定位+transform"></a>（3）利用定位+transform</h4><p>父级设置相对定位，子级设置绝对定位。先将元素的左上角通过 <code>top:50%</code>和 <code>left:50%</code>定位到页面的中心，然后再通过 <code>transform: translate(-50%,-50%)</code> 来调整元素的中心点到页面的中心。该方法需要<strong>考虑浏览器兼容问题,不需要知道自身元素的宽高</strong></p>
+<pre class=" language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>style</span><span class="token punctuation">></span></span><span class="token style language-css">
+    <span class="token number">.</span>father &amp;<span class="token hexcode">#123</span><span class="token punctuation">;</span>
+        <span class="token property">position</span><span class="token punctuation">:</span> relative<span class="token punctuation">;</span>
+        <span class="token property">width</span><span class="token punctuation">:</span> <span class="token number">200</span>px<span class="token punctuation">;</span>
+        <span class="token property">height</span><span class="token punctuation">:</span> <span class="token number">200</span>px<span class="token punctuation">;</span>
+        <span class="token property">background</span><span class="token punctuation">:</span> skyblue<span class="token punctuation">;</span>
+    &amp;<span class="token hexcode">#125</span><span class="token punctuation">;</span>
+    <span class="token number">.</span>son &amp;<span class="token hexcode">#123</span><span class="token punctuation">;</span>
+        <span class="token property">position</span><span class="token punctuation">:</span> absolute<span class="token punctuation">;</span>
+        <span class="token property">top</span><span class="token punctuation">:</span> <span class="token number">50%</span><span class="token punctuation">;</span>
+        <span class="token property">left</span><span class="token punctuation">:</span> <span class="token number">50%</span><span class="token punctuation">;</span>
+  <span class="token property">transform</span><span class="token punctuation">:</span> <span class="token function">translate</span><span class="token punctuation">(</span>-<span class="token number">50%</span>,-<span class="token number">50%</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token property">width</span><span class="token punctuation">:</span> <span class="token number">100</span>px<span class="token punctuation">;</span>
+        <span class="token property">height</span><span class="token punctuation">:</span> <span class="token number">100</span>px<span class="token punctuation">;</span>
+        <span class="token property">background</span><span class="token punctuation">:</span> red<span class="token punctuation">;</span>
+    &amp;<span class="token hexcode">#125</span><span class="token punctuation">;</span>
+</span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>style</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>father<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>son<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span>
+</code></pre>
+<h4 id="（4）table布局"><a href="#（4）table布局" class="headerlink" title="（4）table布局"></a>（4）table布局</h4><p>设置父元素为<code>display:table-cell</code>，子元素设置<code>display: inline-block</code>。利用<code>vertical-align: middle;</code>（用来指定行内元素（inline）或表格单元格（table-cell）元素的垂直对齐方式）和<code>text-align: center;</code>可以让所有的行内块级元素水平垂直居中</p>
+<pre class=" language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>style</span><span class="token punctuation">></span></span><span class="token style language-css">
+    <span class="token number">.</span>father &amp;<span class="token hexcode">#123</span><span class="token punctuation">;</span>
+        <span class="token property">display</span><span class="token punctuation">:</span> table-cell<span class="token punctuation">;</span>
+        <span class="token property">width</span><span class="token punctuation">:</span> <span class="token number">200</span>px<span class="token punctuation">;</span>
+        <span class="token property">height</span><span class="token punctuation">:</span> <span class="token number">200</span>px<span class="token punctuation">;</span>
+        <span class="token property">background</span><span class="token punctuation">:</span> skyblue<span class="token punctuation">;</span>
+        <span class="token property">vertical-align</span><span class="token punctuation">:</span> middle<span class="token punctuation">;</span><span class="token comment" spellcheck="true">/*用来指定行内元素（inline）或表格单元格（table-cell）元素的垂直对齐方式*/</span>
+        <span class="token property">text-align</span><span class="token punctuation">:</span> center<span class="token punctuation">;</span><span class="token comment" spellcheck="true">/*行内内容（例如文字）如何相对它的块父元素水平对齐方式*/</span>
+    &amp;<span class="token hexcode">#125</span><span class="token punctuation">;</span>
+    <span class="token number">.</span>son &amp;<span class="token hexcode">#123</span><span class="token punctuation">;</span>
+        <span class="token property">display</span><span class="token punctuation">:</span> inline-block<span class="token punctuation">;</span>
+        <span class="token property">width</span><span class="token punctuation">:</span> <span class="token number">100</span>px<span class="token punctuation">;</span>
+        <span class="token property">height</span><span class="token punctuation">:</span> <span class="token number">100</span>px<span class="token punctuation">;</span>
+        <span class="token property">background</span><span class="token punctuation">:</span> red<span class="token punctuation">;</span>
+    &amp;<span class="token hexcode">#125</span><span class="token punctuation">;</span>
+</span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>style</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>father<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>son<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span>
+</code></pre>
+<h4 id="（5）flex布局"><a href="#（5）flex布局" class="headerlink" title="（5）flex布局"></a>（5）flex布局</h4><p>通过 <code>display: flex</code>,<code>align-items:center</code> 和 <code>justify-content:center</code>设置容器的垂直和水平方向上为居中对齐，然后它的子元素也可以实现垂直和水平的居中。该方法要<strong>考虑兼容的问题</strong>，该方法在移动端用的较多</p>
+<pre class=" language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>style</span><span class="token punctuation">></span></span><span class="token style language-css">
+    <span class="token number">.</span>father &amp;<span class="token hexcode">#123</span><span class="token punctuation">;</span>
+        <span class="token property">display</span><span class="token punctuation">:</span> flex<span class="token punctuation">;</span><span class="token comment" spellcheck="true">/*flex布局*/</span>
+        <span class="token property">justify-content</span><span class="token punctuation">:</span> center<span class="token punctuation">;</span><span class="token comment" spellcheck="true">/*水平居中*/</span>
+        <span class="token property">align-items</span><span class="token punctuation">:</span> center<span class="token punctuation">;</span><span class="token comment" spellcheck="true">/*垂直居中*/</span>
+        <span class="token property">width</span><span class="token punctuation">:</span> <span class="token number">200</span>px<span class="token punctuation">;</span>
+        <span class="token property">height</span><span class="token punctuation">:</span> <span class="token number">200</span>px<span class="token punctuation">;</span>
+        <span class="token property">background</span><span class="token punctuation">:</span> skyblue<span class="token punctuation">;</span>
+    &amp;<span class="token hexcode">#125</span><span class="token punctuation">;</span>
+    <span class="token number">.</span>son &amp;<span class="token hexcode">#123</span><span class="token punctuation">;</span>
+        <span class="token property">width</span><span class="token punctuation">:</span> <span class="token number">100</span>px<span class="token punctuation">;</span>
+        <span class="token property">height</span><span class="token punctuation">:</span> <span class="token number">100</span>px<span class="token punctuation">;</span>
+        <span class="token property">background</span><span class="token punctuation">:</span> red<span class="token punctuation">;</span>
+    &amp;<span class="token hexcode">#125</span><span class="token punctuation">;</span>
+</span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>style</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>father<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>son<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span>
+</code></pre>
+<h4 id="（6）grid布局"><a href="#（6）grid布局" class="headerlink" title="（6）grid布局"></a>（6）grid布局</h4><p>通过 <code>display: grid</code>,<code>align-items:center</code> 和 <code>justify-content:center</code>设置容器的垂直和水平方向上为居中对齐，然后它的子元素也可以实现垂直和水平的居中。</p>
+<pre class=" language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>style</span><span class="token punctuation">></span></span><span class="token style language-css">
+    <span class="token number">.</span>father &amp;<span class="token hexcode">#123</span><span class="token punctuation">;</span>
+            <span class="token property">display</span><span class="token punctuation">:</span> grid<span class="token punctuation">;</span>
+            <span class="token property">align-items</span><span class="token punctuation">:</span>center<span class="token punctuation">;</span><span class="token comment" spellcheck="true">/*垂直居中*/</span>
+            <span class="token property">justify-content</span><span class="token punctuation">:</span> center<span class="token punctuation">;</span><span class="token comment" spellcheck="true">/*水平居中*/</span>
+            <span class="token property">width</span><span class="token punctuation">:</span> <span class="token number">200</span>px<span class="token punctuation">;</span>
+            <span class="token property">height</span><span class="token punctuation">:</span> <span class="token number">200</span>px<span class="token punctuation">;</span>
+            <span class="token property">background</span><span class="token punctuation">:</span> skyblue<span class="token punctuation">;</span>
+
+        &amp;<span class="token hexcode">#125</span><span class="token punctuation">;</span>
+        <span class="token number">.</span>son &amp;<span class="token hexcode">#123</span><span class="token punctuation">;</span>
+            <span class="token property">width</span><span class="token punctuation">:</span> <span class="token number">10</span>px<span class="token punctuation">;</span>
+            <span class="token property">height</span><span class="token punctuation">:</span> <span class="token number">10</span>px<span class="token punctuation">;</span>
+            <span class="token property">border</span><span class="token punctuation">:</span> <span class="token number">1</span>px solid red
+        &amp;<span class="token hexcode">#125</span><span class="token punctuation">;</span>
+</span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>style</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>father<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>son<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span>
+</code></pre>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2022/03/02/css/01/" data-id="cl13b47zw0001283ud085af8a" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/css/" rel="tag">css</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-css/02" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2022/03/02/css/02/" class="article-date">
+  <time datetime="2022-03-01T16:00:00.000Z" itemprop="datePublished">2022-03-02</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/%E8%8B%8F%E8%B6%8A%E9%A3%9E/">苏越飞</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2022/03/02/css/02/">盒子模型</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <hr>
+<h2 id="盒子模型"><a href="#盒子模型" class="headerlink" title="盒子模型"></a>盒子模型</h2><p>一个盒子由四个部分组成：content、padding、border、margin</p>
+<h3 id="标准盒子模型"><a href="#标准盒子模型" class="headerlink" title="标准盒子模型"></a>标准盒子模型</h3><p><img src="https://cdn.nlark.com/yuque/0/2020/png/1500604/1603600820746-e10daafa-451a-454e-9705-f8c358769d5b.png#align=left&display=inline&height=366&margin=%5Bobject%20Object%5D&originHeight=455&originWidth=746&size=0&status=done&style=none&width=600" alt="image"></p>
+<h3 id="IE盒子模型"><a href="#IE盒子模型" class="headerlink" title="IE盒子模型"></a>IE盒子模型</h3><p><img src="https://cdn.nlark.com/yuque/0/2020/png/1500604/1603600820555-dc6ed390-d47e-412b-942a-857bbe5f280d.png?x-oss-process=image/resize,w_746#align=left&display=inline&height=368&margin=%5Bobject%20Object%5D&originHeight=462&originWidth=791&size=0&status=done&style=none&width=630" alt="img"></p>
+<p>标准盒模型和 IE 盒模型的区别在于设置 width 和 height 时，所对应的范围不同：</p>
+<ul>
+<li><strong>标准盒模型的 width 和 height 属性的范围只包含了 content</strong></li>
+<li>IE 盒模型的 width 和 height 属性的范围包含了 border、padding 和 content。  </li>
+</ul>
+<p>可以通过修改元素的 box-sizing 属性来改变元素的盒模型：</p>
+<ul>
+<li><code>box-sizing: content-box</code>表示标准盒模型（默认值）</li>
+<li><code>box-sizing: border-box</code>表示 IE 盒模型（怪异盒模型）</li>
+</ul>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2022/03/02/css/02/" data-id="cl13b48000003283ubds3anjn" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/css/" rel="tag">css</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-css/03" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2022/03/02/css/03/" class="article-date">
+  <time datetime="2022-03-01T16:00:00.000Z" itemprop="datePublished">2022-03-02</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/%E8%8B%8F%E8%B6%8A%E9%A3%9E/">苏越飞</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2022/03/02/css/03/">回流和重绘</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <hr>
+<h2 id="回流和重绘"><a href="#回流和重绘" class="headerlink" title="回流和重绘"></a>回流和重绘</h2><h3 id="是什么"><a href="#是什么" class="headerlink" title="是什么"></a>是什么</h3><p>回流/重排(reflow)和重绘(repaint)<br>可以把每个元素理解为一个盒子,在浏览器解析过程中,会触发回流和重绘.  </p>
+<ul>
+<li>回流/重排：布局引擎会根据各种样式计算每个盒子在页面上的大小与位置</li>
+<li>重绘：当计算好盒模型的位置、大小及其他属性后，浏览器根据每个盒子特性进行绘制</li>
+</ul>
+<p>页面渲染过程：</p>
+<ul>
+<li>解析 HTML，构建 <strong>DOM 树</strong></li>
+<li>解析 CSS ，生成 <strong>CSS 规则树</strong></li>
+<li>合并 DOM 树和 CSS 规则树，生成 <strong>render树/渲染树</strong></li>
+<li><strong>布局</strong> render 树（ 回流：Layout / reflow ），负责各元素位置、大小的计算</li>
+<li><strong>绘制</strong> render 树（ 重绘：paint / repaint ），绘制页面像素信息</li>
+<li>浏览器会将各层的像素信息发送给 GPU，<strong>GPU 将各层像素信息合成</strong>（ composite ），显示在屏幕上  </li>
+</ul>
+<p><img src="https://raw.githubusercontent.com/yuefei-su/My-DrawingBed/main/notes/db7bddd0-bdf4-11eb-85f6-6fac77c0c9b3.png"></p>
+<h3 id="如何触发"><a href="#如何触发" class="headerlink" title="如何触发"></a>如何触发</h3><h4 id="回流即布局即计算位置和大小"><a href="#回流即布局即计算位置和大小" class="headerlink" title="回流即布局即计算位置和大小"></a>回流即布局即计算位置和大小</h4><p>回流触发的情况：  </p>
+<ul>
+<li>添加或删除可见的DOM元素</li>
+<li>元素的位置发生变化</li>
+<li>元素的大小发生变化（包括外边距、内边框、边框大小、高度和宽度等）</li>
+<li>内容发生变化，比如文本变化或图片被另一个不同尺寸的图片所替代</li>
+<li>页面初始渲染的时候（这避免不了）</li>
+<li>浏览器的窗口尺寸变化（因为回流是根据视口的大小来计算元素的位置和大小的）</li>
+</ul>
+<h4 id="重绘即像素，触发回流一定会触发重绘"><a href="#重绘即像素，触发回流一定会触发重绘" class="headerlink" title="重绘即像素，触发回流一定会触发重绘"></a>重绘即像素，触发回流一定会触发重绘</h4><ul>
+<li>元素移动位置时，等等（回流+重绘）</li>
+<li>颜色修改</li>
+<li>文本方向修改</li>
+<li>阴影修改</li>
+</ul>
+<h3 id="如何减少"><a href="#如何减少" class="headerlink" title="如何减少"></a>如何减少</h3><p>避免回流：</p>
+<ul>
+<li>如果想设定元素的样式，通过改变元素的 <strong>class 类名</strong> (尽可能在 DOM 树的最里层)</li>
+<li>避免设置多项内联样式</li>
+<li>避免使用 table 布局，table 中每个元素的大小以及内容的改动，都会导致整个 table 的重新计算</li>
+<li>对于那些复杂的动画，对其设置 position: fixed/absolute，<strong>尽可能地使元素脱离文档流，从而减少对其他元素的影响</strong></li>
+<li>可以使用<strong>css3硬件加速</strong>，可以让transform、opacity、filters这些动画不会引起回流重绘</li>
+<li>避免使用 CSS 的 JavaScript 表达式</li>
+<li>可以使用<strong>变量的形式缓存</strong>起来，待计算完毕再提交给浏览器发出重计算请求<pre><code>const el = document.getElementById(&#39;el&#39;)
+for(let i=0;i&lt;10;i++) &#123;
+  el.style.top  = el.offsetTop  + 10 + &quot;px&quot;;
+  el.style.left = el.offsetLeft + 10 + &quot;px&quot;;
+&#125;
+</code></pre>
+```<br>// 缓存offsetLeft与offsetTop的值<br>const el = document.getElementById(‘el’)<br>let offLeft = el.offsetLeft, offTop = el.offsetTop</li>
+</ul>
+<p>// 在JS层面进行计算<br>for(let i=0;i&lt;10;i++) {<br>  offLeft += 10<br>  offTop  += 10<br>}</p>
+<p>// 一次性将计算结果应用到DOM上<br>el.style.left = offLeft + “px”<br>el.style.top = offTop  + “px”</p>
+<pre><code>
+- 可以使用**类名**去合并样式
+</code></pre>
+<p>const container = document.getElementById(‘container’)<br>container.style.width = ‘100px’<br>container.style.height = ‘200px’<br>container.style.border = ‘10px solid red’<br>container.style.color = ‘red</p>
+<pre><code>
+</code></pre>
+<style>
+    .basic_style {
+        width: 100px;
+        height: 200px;
+        border: 10px solid red;
+        color: red;
+    }
+</style>
+<script>
+    const container = document.getElementById('container')
+    container.classList.add('basic_style')
+</script>
+<p>```</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2022/03/02/css/03/" data-id="cl13b48030007283uga764mft" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/css/" rel="tag">css</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-css/04" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2022/03/02/css/04/" class="article-date">
+  <time datetime="2022-03-01T16:00:00.000Z" itemprop="datePublished">2022-03-02</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/%E8%8B%8F%E8%B6%8A%E9%A3%9E/">苏越飞</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2022/03/02/css/04/">行内元素和块级元素</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <hr>
+<h2 id="行内元素和块级元素：display-的-block、inline-和-inline-block-的区别"><a href="#行内元素和块级元素：display-的-block、inline-和-inline-block-的区别" class="headerlink" title="行内元素和块级元素：display 的 block、inline 和 inline-block 的区别"></a>行内元素和块级元素：display 的 block、inline 和 inline-block 的区别</h2><p>（1）<strong>block</strong>：会独占一行，多个元素会另起一行，可以设置 width、height、margin 和 padding 属性；</p>
+<p>（2）<strong>inline</strong>：元素不会独占一行，设置 width、height 属性无效。但可以设置水平方向的 margin 和 padding 属性，不能设置垂直方向的 padding 和 margin；</p>
+<p>（3）<strong>inline-block</strong>：将对象设置为 inline 对象，但对象的内容作为 block 对象呈现，之后的内联对象会被排列在同一行内。</p>
+<p>对于行内元素和块级元素，其特点如下：</p>
+<p><strong>（1）行内元素</strong></p>
+<ul>
+<li><strong>设置宽高无效；</strong></li>
+<li><strong>可以设置水平方向的 margin 和 padding 属性，不能设置垂直方向的 padding 和 margin；</strong></li>
+<li>不会自动换行；</li>
+<li>如：a,span,img,label,input,textarea,select,strong,u,em等等</li>
+</ul>
+<p><strong>（2）块级元素</strong></p>
+<ul>
+<li>可以设置宽高；</li>
+<li>设置 margin 和 padding 都有效；</li>
+<li>可以自动换行；</li>
+<li>多个块状，默认排列从上到下。</li>
+<li>如：h1-hi6,p,div,hr,,ol,ul,li等等</li>
+</ul>
+<h3 id="display-inline-block-什么时候会显示间隙？"><a href="#display-inline-block-什么时候会显示间隙？" class="headerlink" title="display:inline-block 什么时候会显示间隙？"></a>display:inline-block 什么时候会显示间隙？</h3><ul>
+<li>有空格时会有间隙，可以删除空格解决；</li>
+<li><code>margin</code>正值时，可以让<code>margin</code>使用负值解决；</li>
+<li>使用<code>font-size</code>时，可通过设置<code>font-size:0</code>、<code>letter-spacing</code>、<code>word-spacing</code>解决；</li>
+</ul>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2022/03/02/css/04/" data-id="cl13b48070009283u8sbq200j" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/css/" rel="tag">css</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-css/05" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2022/03/02/css/05/" class="article-date">
+  <time datetime="2022-03-01T16:00:00.000Z" itemprop="datePublished">2022-03-02</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/%E8%8B%8F%E8%B6%8A%E9%A3%9E/">苏越飞</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2022/03/02/css/05/">CSS选择器及实现原理</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <hr>
+<p>类选择器和伪类的区别及优先级？<br>伪类及实现原理</p>
+<h2 id="CSS选择器及实现原理"><a href="#CSS选择器及实现原理" class="headerlink" title="CSS选择器及实现原理"></a>CSS选择器及实现原理</h2><h3 id="1-CSS选择器优先级"><a href="#1-CSS选择器优先级" class="headerlink" title="1. CSS选择器优先级"></a>1. CSS选择器优先级</h3><table>
+<thead>
+<tr>
+<th><strong>选择器</strong></th>
+<th><strong>格式</strong></th>
+<th><strong>优先级权重</strong></th>
+</tr>
+</thead>
+<tbody><tr>
+<td>id 选择器</td>
+<td>#id</td>
+<td>100</td>
+</tr>
+<tr>
+<td>类选择器</td>
+<td>.classname</td>
+<td>10</td>
+</tr>
+<tr>
+<td>属性选择器</td>
+<td>a[ref=“eee”]</td>
+<td>10</td>
+</tr>
+<tr>
+<td>伪类选择器</td>
+<td>li:last-child</td>
+<td>10</td>
+</tr>
+<tr>
+<td>标签选择器</td>
+<td>div</td>
+<td>1</td>
+</tr>
+<tr>
+<td>伪元素选择器</td>
+<td>li::after</td>
+<td>1</td>
+</tr>
+<tr>
+<td>相邻兄弟选择器</td>
+<td>h1+p</td>
+<td>0</td>
+</tr>
+<tr>
+<td>通用兄弟选择器</td>
+<td>h1~p</td>
+<td>0</td>
+</tr>
+<tr>
+<td>子选择器</td>
+<td>ul&gt;li</td>
+<td>0</td>
+</tr>
+<tr>
+<td>后代选择器</td>
+<td>li a</td>
+<td>0</td>
+</tr>
+<tr>
+<td>通配符</td>
+<td>*</td>
+<td>0</td>
+</tr>
+</tbody></table>
+<p>对于选择器的<strong>优先级</strong>：</p>
+<ul>
+<li>标签选择器、伪元素选择器：1</li>
+<li>类选择器、伪类选择器、属性选择器：10</li>
+<li>id 选择器：100</li>
+<li>内联样式：1000</li>
+<li>!important：10000  </li>
+</ul>
+<p><strong>注意事项：</strong></p>
+<ul>
+<li>如果优先级相同，则最后出现的样式生效；</li>
+<li>继承得到的样式的优先级最低；</li>
+<li>样式表的来源不同时，优先级顺序为：内联样式 &gt; 内部样式 &gt; 外部样式 &gt; 浏览器用户自定义样式 &gt; 浏览器默认样式。</li>
+</ul>
+<h3 id="2-伪类选择器"><a href="#2-伪类选择器" class="headerlink" title="2. 伪类选择器"></a>2. 伪类选择器</h3><pre class=" language-css"><code class="language-css"><span class="token punctuation">:</span>link ：选择未被访问的链接
+<span class="token punctuation">:</span>visited：选取已被访问的链接
+<span class="token punctuation">:</span>active：选择活动链接
+<span class="token punctuation">:</span>hover ：鼠标指针浮动在上面的元素
+<span class="token punctuation">:</span>focus ：选择具有焦点的
+<span class="token punctuation">:</span>first-child：父元素的首个子元素
+<span class="token punctuation">:</span>first-of-type 表示一组同级元素中其类型的第一个元素
+<span class="token punctuation">:</span>last-of-type 表示一组同级元素中其类型的最后一个元素
+<span class="token punctuation">:</span>only-of-type 表示没有同类型兄弟元素的元素
+<span class="token punctuation">:</span>only-child 表示没有任何兄弟的元素
+<span class="token punctuation">:</span><span class="token function">nth-child</span><span class="token punctuation">(</span>n<span class="token punctuation">)</span> 根据元素在一组同级中的位置匹配元素
+<span class="token punctuation">:</span><span class="token function">nth-last-of-type</span><span class="token punctuation">(</span>n<span class="token punctuation">)</span> 匹配给定类型的元素，基于它们在一组兄弟元素中的位置，从末尾开始计数
+<span class="token punctuation">:</span>last-child 表示一组兄弟元素中的最后一个元素
+<span class="token punctuation">:</span>root 设置HTML文档
+<span class="token punctuation">:</span>empty 指定空的元素
+<span class="token punctuation">:</span>enabled 选择可用元素
+<span class="token punctuation">:</span>disabled 选择被禁用元素
+<span class="token punctuation">:</span>checked 选择选中的元素
+<span class="token punctuation">:</span><span class="token function">not</span><span class="token punctuation">(</span>selector<span class="token punctuation">)</span> 选择与 &lt;selector> 不匹配的所有元素
+</code></pre>
+<h3 id="3-伪元素选择器"><a href="#3-伪元素选择器" class="headerlink" title="3. 伪元素选择器"></a>3. 伪元素选择器</h3><pre class=" language-css"><code class="language-css"><span class="token punctuation">:</span><span class="token punctuation">:</span>first-letter ：用于选取指定选择器的首字母
+<span class="token punctuation">:</span><span class="token punctuation">:</span>first-line ：选取指定选择器的首行
+<span class="token punctuation">:</span><span class="token punctuation">:</span><span class="token property">before</span> <span class="token punctuation">:</span> 选择器在被选元素的内容前面插入内容
+<span class="token punctuation">:</span><span class="token punctuation">:</span><span class="token property">after</span> <span class="token punctuation">:</span> 选择器在被选元素的内容后面插入内容
+</code></pre>
+<ul>
+<li>伪类伪元素区别：1、伪类的操作对象是文档树中<strong>已有的元素</strong>；而伪元素则是创建的文档树外的元素。2、css3中，<strong>单冒号代表伪类</strong>，双冒号表示伪元素。3、伪类侧重丰富选择器的选择语法范围内元素的选择能力，伪元素侧重表达或者定义不在语法定义范围内的抽象元素。</li>
+</ul>
+<h3 id="4-属性选择器"><a href="#4-属性选择器" class="headerlink" title="4. 属性选择器"></a>4. 属性选择器</h3><pre class=" language-css"><code class="language-css">[attribute*=value]：选择attribute属性值包含value的所有元素
+[attribute^=value]：选择attribute属性开头为value的所有元素
+[attribute$=value]：选择attribute属性结尾为value的所有元素
+[attribute=value] 选择所有使用attribute=value的元素
+</code></pre>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2022/03/02/css/05/" data-id="cl13b480b000a283u9dfn2qmn" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/css/" rel="tag">css</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-css/06" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2022/03/02/css/06/" class="article-date">
+  <time datetime="2022-03-01T16:00:00.000Z" itemprop="datePublished">2022-03-02</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/%E8%8B%8F%E8%B6%8A%E9%A3%9E/">苏越飞</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2022/03/02/css/06/">隐藏元素的方法</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <hr>
+<h2 id="隐藏元素的方法"><a href="#隐藏元素的方法" class="headerlink" title="隐藏元素的方法"></a>隐藏元素的方法</h2><ul>
+<li><strong>display: none</strong>：渲染树不会包含该渲染对象，因此该元素不会在页面中占据位置，也不会响应绑定的监听事件。</li>
+<li><strong>visibility: hidden</strong>：元素在页面中仍占据空间，但是不会响应绑定的监听事件。</li>
+<li><strong>opacity: 0</strong>：将元素的透明度设置为 0，以此来实现元素的隐藏。元素在页面中仍然占据空间，并且能够响应元素绑定的监听事件。</li>
+<li><strong>position: absolute</strong>：通过使用绝对定位将元素移除可视区域内，以此来实现元素的隐藏。</li>
+<li><strong>z-index: 负值</strong>：来使其他元素遮盖住该元素，以此来实现隐藏。</li>
+<li><strong>clip/clip-path</strong> ：使用元素<strong>裁剪</strong>的方法来实现元素的隐藏，这种方法下，元素仍在页面中占据位置，但是不会响应绑定的监听事件。</li>
+<li><strong>transform: scale(0,0)<strong>：将元素</strong>缩放</strong>为 0，来实现元素的隐藏。这种方法下，元素仍在页面中占据位置，但是不会响应绑定的监听事件。</li>
+<li>设置height、width模型属性为0</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>display: none</th>
+<th>visibility: hidden</th>
+<th>opacity: 0</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>页面中</td>
+<td>不存在</td>
+<td>存在</td>
+<td>存在</td>
+</tr>
+<tr>
+<td>自身绑定事件</td>
+<td>不触发</td>
+<td>不触发</td>
+<td>不一定</td>
+</tr>
+<tr>
+<td>重排</td>
+<td>会</td>
+<td>不会</td>
+<td>不会</td>
+</tr>
+<tr>
+<td>重绘</td>
+<td>会</td>
+<td>会</td>
+<td>不一定</td>
+</tr>
+</tbody></table>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2022/03/02/css/06/" data-id="cl13b480d000e283ucuc84gn7" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/css/" rel="tag">css</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-css/07" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2022/03/02/css/07/" class="article-date">
+  <time datetime="2022-03-01T16:00:00.000Z" itemprop="datePublished">2022-03-02</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/%E8%8B%8F%E8%B6%8A%E9%A3%9E/">苏越飞</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2022/03/02/css/07/">BFC</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <hr>
+<h2 id="BFC"><a href="#BFC" class="headerlink" title="BFC"></a>BFC</h2><h3 id="1-是什么"><a href="#1-是什么" class="headerlink" title="1. 是什么"></a>1. 是什么</h3><p>BFC（Block Formatting Context），即块级格式化上下文，目的是形成一个相对于外界完全独立的空间，让内部的子元素不会影响到外部的元素，<strong>即浮动</strong>。<br>浮动和清除浮动时，只会应用于同一个BFC内的元素。浮动不会影响其他BFC中的元素布局，清除浮动（clear：both|left|right）只能清除同一BFC中在它前面的元素浮动。</p>
+<h3 id="2-触发BFC的条件"><a href="#2-触发BFC的条件" class="headerlink" title="2. 触发BFC的条件"></a>2. 触发BFC的条件</h3><ul>
+<li>根元素：body；</li>
+<li>元素设置浮动：float：left/right 除 none 以外的值；</li>
+<li>元素设置绝对定位：position (absolute、fixed)；</li>
+<li>display 值为：inline-block、flex、grid、table、table-cell、table-caption、等；</li>
+<li>overflow 值为：hidden、auto、scroll，不为visible。</li>
+</ul>
+<h3 id="3-应用场景"><a href="#3-应用场景" class="headerlink" title="3. 应用场景"></a>3. 应用场景</h3><h4 id="防止margin塌陷"><a href="#防止margin塌陷" class="headerlink" title="防止margin塌陷"></a>防止margin塌陷</h4><p>在 同一个BFC 中相邻的两个容器的 margin 会重叠。<br>由于 BFC 是一个独立的区域，内部的元素和外部的元素互不影响，将两个元素变为两个 BFC，就解决了 margin 重叠的问题。</p>
+<pre><code>&lt;style&gt;
+    .wrap &#123;
+        overflow: hidden;// 新的BFC
+    &#125;
+    p &#123;
+        color: #f55;
+        background: #fcc;
+        width: 200px;
+        line-height: 100px;
+        text-align:center;
+        margin: 100px;
+    &#125;
+&lt;/style&gt;
+&lt;body&gt;
+    &lt;p&gt;Haha&lt;/p &gt;
+    &lt;div class=&quot;wrap&quot;&gt;
+        &lt;p&gt;Hehe&lt;/p &gt;
+    &lt;/div&gt;
+&lt;/body&gt;
+</code></pre>
+<h4 id="解决高度塌陷的问题（清除浮动）（父子之间）"><a href="#解决高度塌陷的问题（清除浮动）（父子之间）" class="headerlink" title="解决高度塌陷的问题（清除浮动）（父子之间）"></a>解决高度塌陷的问题（清除浮动）（父子之间）</h4><p>在对子元素设置浮动后，父元素会发生高度塌陷，也就是父元素的高度变为 0。解决这个问题，只需要把父元素变成一个 BFC。常用的办法是给父元素设置<code>overflow:hidden</code>。<br><strong>计算BFC高度时，浮动子元素也要参与计算</strong> 。</p>
+<pre><code>&lt;style&gt;
+    .par &#123;
+        border: 5px solid #fcc;
+        width: 300px;
+        overflow: hidden;
+    &#125;
+ 
+    .child &#123;
+        border: 5px solid #f66;
+        width:100px;
+        height: 100px;
+        float: left;
+    &#125;
+&lt;/style&gt;
+&lt;body&gt;
+    &lt;div class=&quot;par&quot;&gt;
+        &lt;div class=&quot;child&quot;&gt;&lt;/div&gt;
+        &lt;div class=&quot;child&quot;&gt;&lt;/div&gt;
+    &lt;/div&gt;
+&lt;/body&gt;
+</code></pre>
+<h4 id="创建自适应两栏布局（兄弟之间）"><a href="#创建自适应两栏布局（兄弟之间）" class="headerlink" title="创建自适应两栏布局（兄弟之间）"></a>创建自适应两栏布局（兄弟之间）</h4><p>每个元素的左 margin 值和容器的左 border 相接触，可以利用此特性来创建自适应两栏布局：左边的宽度固定，右边的宽度自适应。</p>
+<pre><code>&lt;style&gt;
+    body &#123;
+        width: 300px;
+        position: relative;
+    &#125;
+ 
+    .aside &#123;
+        width: 100px;
+        height: 150px;
+        float: left;
+        background: #f66;
+    &#125;
+ 
+    .main &#123;
+        height: 200px;
+        background: #fcc;
+        overflow: hidden;//新的BFC
+    &#125;
+&lt;/style&gt;
+&lt;body&gt;
+    &lt;div class=&quot;aside&quot;&gt;&lt;/div&gt;
+    &lt;div class=&quot;main&quot;&gt;&lt;/div&gt;
+&lt;/body&gt;
+</code></pre>
+<p>新的BFC不会与浮动的.aside元素重叠。因此会根据包含块的宽度，和.aside的宽度，自动变窄</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2022/03/02/css/07/" data-id="cl13b480e000g283u8xap7w27" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/css/" rel="tag">css</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-Computer/01" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2022/03/02/computer/01/" class="article-date">
+  <time datetime="2022-03-01T16:00:00.000Z" itemprop="datePublished">2022-03-02</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/%E8%8B%8F%E8%B6%8A%E9%A3%9E/">苏越飞</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2022/03/02/computer/01/">输入URL到网页呈现</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <hr>
+<h1 id="输入URL到网页呈现"><a href="#输入URL到网页呈现" class="headerlink" title="输入URL到网页呈现"></a>输入URL到网页呈现</h1><h2 id="基本步骤"><a href="#基本步骤" class="headerlink" title="基本步骤"></a>基本步骤</h2><ol>
+<li><p>URL解析</p>
+</li>
+<li><p>DNS查询</p>
+</li>
+<li><p>TCP连接</p>
+</li>
+<li><p>HTTP请求</p>
+</li>
+<li><p>响应请求</p>
+</li>
+<li><p>页面渲染</p>
+</li>
+</ol>
+<h2 id="详细分析"><a href="#详细分析" class="headerlink" title="详细分析"></a>详细分析</h2><h3 id="1-URL解析"><a href="#1-URL解析" class="headerlink" title="1. URL解析"></a>1. URL解析</h3><p>首先判断是否是合法的URL，还是一个待搜索的关键词<br>如果是合法的URL，则进行URL解析   </p>
+<p><img src="https://raw.githubusercontent.com/yuefei-su/My-DrawingBed/main/notes/27a0c690-bdf4-11eb-ab90-d9ae814b240d.png">  </p>
+<h3 id="2-DNS查询"><a href="#2-DNS查询" class="headerlink" title="2. DNS查询"></a>2. DNS查询</h3><p>获取到域名对应的目标服务器IP地址 </p>
+<p><img src="https://raw.githubusercontent.com/yuefei-su/My-DrawingBed/main/notes/330fb770-bdf4-11eb-85f6-6fac77c0c9b3.png">  </p>
+<h3 id="3-TCP连接"><a href="#3-TCP连接" class="headerlink" title="3. TCP连接"></a>3. TCP连接</h3><p>浏览器在确定目标服务器的IP地址后，经历三次握手建立TCP连接</p>
+<p><img src="https://raw.githubusercontent.com/yuefei-su/My-DrawingBed/main/notes/ad750790-bdf4-11eb-85f6-6fac77c0c9b3.png"></p>
+<h3 id="4-发送http请求"><a href="#4-发送http请求" class="headerlink" title="4. 发送http请求"></a>4. 发送http请求</h3><p>建立tcp连接之后，就可以再此基础上通信了。<br><strong>浏览器</strong>发送http请求到目标服务器。请求内容包括：</p>
+<ul>
+<li>请求行(请求方法get/post、请求URL、http协议及版本)</li>
+<li>请求头/报文头</li>
+<li>请求主体  </li>
+</ul>
+<p><strong>常见http请求方法</strong></p>
+<ul>
+<li>GET: 向服务器获取数据；</li>
+<li>POST：将实体提交到指定的资源，通常会造成服务器资源的修改；</li>
+<li>PUT：上传文件，更新数据；</li>
+<li>DELETE：删除服务器上的对象；</li>
+<li>HEAD：获取报文首部，与GET相比，不返回报文主体部分；</li>
+<li>OPTIONS：询问支持的请求方法，用来跨域请求；</li>
+<li>CONNECT：要求在与代理服务器通信时建立隧道，使用隧道进行TCP通信；</li>
+<li>TRACE: 回显服务器收到的请求，主要⽤于测试或诊断。  </li>
+</ul>
+<p><strong>HTTP Request Header 常见的请求头：</strong></p>
+<ul>
+<li>Accept:浏览器能够处理的内容类型</li>
+<li>Accept-Charset:浏览器能够显示的字符集</li>
+<li>Accept-Encoding：浏览器能够处理的压缩编码</li>
+<li>Accept-Language：浏览器当前设置的语言</li>
+<li>Connection：浏览器与服务器之间连接的类型</li>
+<li>Cookie：当前页面设置的任何Cookie</li>
+<li>Host：发出请求的页面所在的域</li>
+<li>Referer：发出请求的页面的URL</li>
+<li><strong>User-Agent：浏览器的用户代理字符串</strong></li>
+</ul>
+<p><img src="https://raw.githubusercontent.com/yuefei-su/My-DrawingBed/main/notes/bbcb60f0-bdf4-11eb-ab90-d9ae814b240d.png"></p>
+<h3 id="5-响应请求"><a href="#5-响应请求" class="headerlink" title="5. 响应请求"></a>5. 响应请求</h3><p>当<strong>服务器</strong>接收到浏览器的请求之后，就会进行逻辑操作，处理完成之后返回一个HTTP响应消息，响应消息包括：</p>
+<ul>
+<li>响应行/状态行</li>
+<li>响应头/消息报头</li>
+<li>响应正文 </li>
+</ul>
+<p><strong>HTTP Responses Header 常见的响应头：</strong></p>
+<ul>
+<li>Date：表示消息发送的时间，时间的描述格式由rfc822定义</li>
+<li>server:服务器名称</li>
+<li>Connection：浏览器与服务器之间连接的类型</li>
+<li>Cache-Control：控制HTTP缓存</li>
+<li><strong>content-type:表示后面的文档属于什么MIME类型</strong></li>
+</ul>
+<p><img src="https://raw.githubusercontent.com/yuefei-su/My-DrawingBed/main/notes/c5fe0140-bdf4-11eb-ab90-d9ae814b240d.png"><br>在服务器响应之后，http默认开启长链接keep-alive。<br>当页面关闭之后，tcp连接则会经过四次挥手完成断开</p>
+<h3 id="6-页面渲染"><a href="#6-页面渲染" class="headerlink" title="6. 页面渲染"></a>6. 页面渲染</h3><p>当浏览器接收服务器响应的资源并进行解析：  </p>
+<ul>
+<li>查看响应头信息，根据不同的指示做出相应的处理。比如重定向、存储cookie、解压gzip、缓存资源等等。  </li>
+<li>查看响应头的Content-Type值，<strong>根据不同的资源类型采用不同的解析方式</strong>。</li>
+</ul>
+<p>页面渲染过程：</p>
+<ul>
+<li>解析 HTML，构建 <strong>DOM 树</strong></li>
+<li>解析 CSS ，生成 <strong>CSS 规则树</strong></li>
+<li>合并 DOM 树和 CSS 规则树，生成 <strong>render 树</strong></li>
+<li><strong>布局</strong> render 树（ Layout / reflow ），负责各元素尺寸、位置的计算</li>
+<li><strong>绘制</strong> render 树（ paint / repaint ），绘制页面像素信息</li>
+<li>浏览器会将各层的像素信息发送给 GPU，GPU 会将<strong>各层像素信息合成</strong>（ composite ），显示在屏幕上  </li>
+</ul>
+<p><img src="https://raw.githubusercontent.com/yuefei-su/My-DrawingBed/main/notes/db7bddd0-bdf4-11eb-85f6-6fac77c0c9b3.png"></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2022/03/02/computer/01/" data-id="cl13b480g000l283ugthugiz9" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Computer/" rel="tag">Computer</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-Computer/02" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2022/03/02/computer/02/" class="article-date">
+  <time datetime="2022-03-01T16:00:00.000Z" itemprop="datePublished">2022-03-02</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/%E8%8B%8F%E8%B6%8A%E9%A3%9E/">苏越飞</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2022/03/02/computer/02/">GET和POST</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <hr>
+<h2 id="GET和POST"><a href="#GET和POST" class="headerlink" title="GET和POST"></a>GET和POST</h2><p>get和post是http请求的两种方法，其区别如下：  </p>
+<ul>
+<li><strong>应用场景（对服务器资源是否产生影响）</strong>：GET 请求是一个幂等的请求，一般 Get 请求用于对服务器资源不会产生影响的场景，比如说请求一个网页的资源。而 Post 不是一个幂等的请求，一般用于对服务器资源会产生影响的情景，比如注册用户这一类的操作。</li>
+<li><strong>发送的报文实体部分</strong>：Get 请求的报文中实体部分为空，Post 请求的报文中实体部分一般为向服务器发送的数据。</li>
+<li><strong>参数类型</strong>：post 的参数传递支持更多的数据类型。</li>
+<li><strong>是否缓存</strong>：因为两者应用场景不同，浏览器一般会对 <strong>Get 请求缓存</strong>。但很少对 Post 请求缓存。</li>
+<li><strong>安全性</strong>：Get 请求可以将请求的参数放入 url 中向服务器发送，这样的做法相对于 Post 请求来说是不太安全的，因为请求的 url 会被保留在历史记录中。</li>
+<li><strong>请求长度</strong>：浏览器由于对 url 长度的限制，所以会影响 get 请求发送数据时的长度。这个限制是浏览器规定的，并不是 RFC 规定的。</li>
+<li><strong>数据包</strong>：对于GET方式的请求，浏览器会把http header和data一并发送出去，服务器响应200（返回数据）。对于POST，浏览器先发送header，服务器响应100 continue，浏览器再发送data，服务器响应200。并不是所有浏览器都会在POST中发送两次包，Firefox就只发送一次</li>
+</ul>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2022/03/02/computer/02/" data-id="cl13b480i000o283u4kq6496g" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Computer/" rel="tag">Computer</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-Computer/03" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2022/03/02/computer/03/" class="article-date">
+  <time datetime="2022-03-01T16:00:00.000Z" itemprop="datePublished">2022-03-02</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/%E8%8B%8F%E8%B6%8A%E9%A3%9E/">苏越飞</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2022/03/02/computer/03/">http1.0,1.1,2.0的区别</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <hr>
+<h2 id="http1-0-1-1-2-0的区别"><a href="#http1-0-1-1-2-0的区别" class="headerlink" title="http1.0,1.1,2.0的区别"></a>http1.0,1.1,2.0的区别</h2><h3 id="1-http1-0"><a href="#1-http1-0" class="headerlink" title="1. http1.0"></a>1. http1.0</h3><p>HTTP 1.0 浏览器与服务器只保持短暂的连接，每次请求都需要与服务器建立一个TCP连接</p>
+<h3 id="2-http1-1"><a href="#2-http1-1" class="headerlink" title="2. http1.1"></a>2. http1.1</h3><p>在HTTP1.1中，默认支持<strong>长连接</strong>（Connection: keep-alive），即在一个TCP连接上可以传送多个HTTP请求和响应，减少了建立和关闭连接的消耗和延迟。<br>客户端可以<strong>同时发送多个请求</strong>，但服务器必须按照接受到客户端请求的<strong>先后顺序</strong>依次回送响应结果。服务器只有处理完一个请求，才会接着处理下一个请求。如果前面的处理特别慢，后面就会有许多请求排队等着。</p>
+<h3 id="3-http2-0"><a href="#3-http2-0" class="headerlink" title="3. http2.0"></a>3. http2.0</h3><p>新特性：</p>
+<ul>
+<li><p>多路复用<br>HTTP/2 复用TCP连接，在一个连接里，客户端和浏览器都可以同时发送多个请求或回应，而且<strong>不用按照顺序一一对应</strong>，这样就避免了”队头堵塞”</p>
+</li>
+<li><p>二进制分帧<br>HTTP/2 采用<strong>二进制格式的帧</strong>来传输数据，而非 HTTP 1.x的文本格式，帧解析起来更高效</p>
+</li>
+<li><p>首部压缩<br>例如：下图中的两个请求， 请求一发送了所有的头部字段，第二个请求则只需要发送差异数据，这样可以减少冗余数据，降低开销<br><img src="https://raw.githubusercontent.com/yuefei-su/My-DrawingBed/main/notes/3c536740-b93b-11eb-ab90-d9ae814b240d.png"></p>
+</li>
+<li><p>服务器推送<br>HTTP2引入服务器推送，允许服务端推送客户端未请求的资源给客户端 </p>
+<h3 id="4-http3-0"><a href="#4-http3-0" class="headerlink" title="4.http3.0"></a>4.http3.0</h3><p>HTTP/3基于UDP协议实现了类似于TCP的多路复用数据流、传输可靠性等功能，这套功能被称为QUIC协议。</p>
+</li>
+</ul>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2022/03/02/computer/03/" data-id="cl13b480k000s283u8lm81kia" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Computer/" rel="tag">Computer</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+
+
+  <nav id="page-nav">
+    
+    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><a class="extend next" rel="next" href="/page/2/">Next &amp;raquo;</a>
+  </nav>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Categories</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/%E8%8B%8F%E8%B6%8A%E9%A3%9E/">苏越飞</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Computer/" rel="tag">Computer</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/css/" rel="tag">css</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/js/" rel="tag">js</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/Computer/" style="font-size: 10px;">Computer</a> <a href="/tags/css/" style="font-size: 10px;">css</a> <a href="/tags/js/" style="font-size: 20px;">js</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/03/">March 2022</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2022/03/02/css/01/">水平垂直居中</a>
+          </li>
+        
+          <li>
+            <a href="/2022/03/02/css/02/">盒子模型</a>
+          </li>
+        
+          <li>
+            <a href="/2022/03/02/css/03/">回流和重绘</a>
+          </li>
+        
+          <li>
+            <a href="/2022/03/02/css/04/">行内元素和块级元素</a>
+          </li>
+        
+          <li>
+            <a href="/2022/03/02/css/05/">CSS选择器及实现原理</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2022 John Doe<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+
+  
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+  </div>
+</body>
+</html>

@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+
+  
+  <title>BFC | Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="BFC1. 是什么BFC（Block Formatting Context），即块级格式化上下文，目的是形成一个相对于外界完全独立的空间，让内部的子元素不会影响到外部的元素，即浮动。浮动和清除浮动时，只会应用于同一个BFC内的元素。浮动不会影响其他BFC中的元素布局，清除浮动（clear：both|left|right）只能清除同一BFC中在它前面的元素浮动。 2. 触发BFC的条件 根元素：b">
+<meta property="og:type" content="article">
+<meta property="og:title" content="BFC">
+<meta property="og:url" content="http://example.com/2022/03/02/css/07/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="BFC1. 是什么BFC（Block Formatting Context），即块级格式化上下文，目的是形成一个相对于外界完全独立的空间，让内部的子元素不会影响到外部的元素，即浮动。浮动和清除浮动时，只会应用于同一个BFC内的元素。浮动不会影响其他BFC中的元素布局，清除浮动（clear：both|left|right）只能清除同一BFC中在它前面的元素浮动。 2. 触发BFC的条件 根元素：b">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2022-03-01T16:00:00.000Z">
+<meta property="article:modified_time" content="2022-03-03T02:58:29.028Z">
+<meta property="article:author" content="John Doe">
+<meta property="article:tag" content="css">
+<meta name="twitter:card" content="summary">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+<meta name="generator" content="Hexo 5.4.1"><link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://example.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-css/07" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2022/03/02/css/07/" class="article-date">
+  <time datetime="2022-03-01T16:00:00.000Z" itemprop="datePublished">2022-03-02</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/%E8%8B%8F%E8%B6%8A%E9%A3%9E/">苏越飞</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      BFC
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <hr>
+<h2 id="BFC"><a href="#BFC" class="headerlink" title="BFC"></a>BFC</h2><h3 id="1-是什么"><a href="#1-是什么" class="headerlink" title="1. 是什么"></a>1. 是什么</h3><p>BFC（Block Formatting Context），即块级格式化上下文，目的是形成一个相对于外界完全独立的空间，让内部的子元素不会影响到外部的元素，<strong>即浮动</strong>。<br>浮动和清除浮动时，只会应用于同一个BFC内的元素。浮动不会影响其他BFC中的元素布局，清除浮动（clear：both|left|right）只能清除同一BFC中在它前面的元素浮动。</p>
+<h3 id="2-触发BFC的条件"><a href="#2-触发BFC的条件" class="headerlink" title="2. 触发BFC的条件"></a>2. 触发BFC的条件</h3><ul>
+<li>根元素：body；</li>
+<li>元素设置浮动：float：left/right 除 none 以外的值；</li>
+<li>元素设置绝对定位：position (absolute、fixed)；</li>
+<li>display 值为：inline-block、flex、grid、table、table-cell、table-caption、等；</li>
+<li>overflow 值为：hidden、auto、scroll，不为visible。</li>
+</ul>
+<h3 id="3-应用场景"><a href="#3-应用场景" class="headerlink" title="3. 应用场景"></a>3. 应用场景</h3><h4 id="防止margin塌陷"><a href="#防止margin塌陷" class="headerlink" title="防止margin塌陷"></a>防止margin塌陷</h4><p>在 同一个BFC 中相邻的两个容器的 margin 会重叠。<br>由于 BFC 是一个独立的区域，内部的元素和外部的元素互不影响，将两个元素变为两个 BFC，就解决了 margin 重叠的问题。</p>
+<pre><code>&lt;style&gt;
+    .wrap &#123;
+        overflow: hidden;// 新的BFC
+    &#125;
+    p &#123;
+        color: #f55;
+        background: #fcc;
+        width: 200px;
+        line-height: 100px;
+        text-align:center;
+        margin: 100px;
+    &#125;
+&lt;/style&gt;
+&lt;body&gt;
+    &lt;p&gt;Haha&lt;/p &gt;
+    &lt;div class=&quot;wrap&quot;&gt;
+        &lt;p&gt;Hehe&lt;/p &gt;
+    &lt;/div&gt;
+&lt;/body&gt;
+</code></pre>
+<h4 id="解决高度塌陷的问题（清除浮动）（父子之间）"><a href="#解决高度塌陷的问题（清除浮动）（父子之间）" class="headerlink" title="解决高度塌陷的问题（清除浮动）（父子之间）"></a>解决高度塌陷的问题（清除浮动）（父子之间）</h4><p>在对子元素设置浮动后，父元素会发生高度塌陷，也就是父元素的高度变为 0。解决这个问题，只需要把父元素变成一个 BFC。常用的办法是给父元素设置<code>overflow:hidden</code>。<br><strong>计算BFC高度时，浮动子元素也要参与计算</strong> 。</p>
+<pre><code>&lt;style&gt;
+    .par &#123;
+        border: 5px solid #fcc;
+        width: 300px;
+        overflow: hidden;
+    &#125;
+ 
+    .child &#123;
+        border: 5px solid #f66;
+        width:100px;
+        height: 100px;
+        float: left;
+    &#125;
+&lt;/style&gt;
+&lt;body&gt;
+    &lt;div class=&quot;par&quot;&gt;
+        &lt;div class=&quot;child&quot;&gt;&lt;/div&gt;
+        &lt;div class=&quot;child&quot;&gt;&lt;/div&gt;
+    &lt;/div&gt;
+&lt;/body&gt;
+</code></pre>
+<h4 id="创建自适应两栏布局（兄弟之间）"><a href="#创建自适应两栏布局（兄弟之间）" class="headerlink" title="创建自适应两栏布局（兄弟之间）"></a>创建自适应两栏布局（兄弟之间）</h4><p>每个元素的左 margin 值和容器的左 border 相接触，可以利用此特性来创建自适应两栏布局：左边的宽度固定，右边的宽度自适应。</p>
+<pre><code>&lt;style&gt;
+    body &#123;
+        width: 300px;
+        position: relative;
+    &#125;
+ 
+    .aside &#123;
+        width: 100px;
+        height: 150px;
+        float: left;
+        background: #f66;
+    &#125;
+ 
+    .main &#123;
+        height: 200px;
+        background: #fcc;
+        overflow: hidden;//新的BFC
+    &#125;
+&lt;/style&gt;
+&lt;body&gt;
+    &lt;div class=&quot;aside&quot;&gt;&lt;/div&gt;
+    &lt;div class=&quot;main&quot;&gt;&lt;/div&gt;
+&lt;/body&gt;
+</code></pre>
+<p>新的BFC不会与浮动的.aside元素重叠。因此会根据包含块的宽度，和.aside的宽度，自动变窄</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2022/03/02/css/07/" data-id="cl13b480e000g283u8xap7w27" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/css/" rel="tag">css</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2022/03/02/css/06/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          隐藏元素的方法
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2022/03/02/computer/01/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">输入URL到网页呈现</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Categories</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/%E8%8B%8F%E8%B6%8A%E9%A3%9E/">苏越飞</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Computer/" rel="tag">Computer</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/css/" rel="tag">css</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/js/" rel="tag">js</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/Computer/" style="font-size: 10px;">Computer</a> <a href="/tags/css/" style="font-size: 10px;">css</a> <a href="/tags/js/" style="font-size: 20px;">js</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/03/">March 2022</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2022/03/02/css/01/">水平垂直居中</a>
+          </li>
+        
+          <li>
+            <a href="/2022/03/02/css/02/">盒子模型</a>
+          </li>
+        
+          <li>
+            <a href="/2022/03/02/css/03/">回流和重绘</a>
+          </li>
+        
+          <li>
+            <a href="/2022/03/02/css/04/">行内元素和块级元素</a>
+          </li>
+        
+          <li>
+            <a href="/2022/03/02/css/05/">CSS选择器及实现原理</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2022 John Doe<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+
+  
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+  </div>
+</body>
+</html>

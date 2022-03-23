@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+
+  
+  <title>输入URL到网页呈现 | Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="输入URL到网页呈现基本步骤 URL解析  DNS查询  TCP连接  HTTP请求  响应请求  页面渲染   详细分析1. URL解析首先判断是否是合法的URL，还是一个待搜索的关键词如果是合法的URL，则进行URL解析       2. DNS查询获取到域名对应的目标服务器IP地址     3. TCP连接浏览器在确定目标服务器的IP地址后，经历三次握手建立TCP连接  4. 发送http">
+<meta property="og:type" content="article">
+<meta property="og:title" content="输入URL到网页呈现">
+<meta property="og:url" content="http://example.com/2022/03/02/computer/01/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="输入URL到网页呈现基本步骤 URL解析  DNS查询  TCP连接  HTTP请求  响应请求  页面渲染   详细分析1. URL解析首先判断是否是合法的URL，还是一个待搜索的关键词如果是合法的URL，则进行URL解析       2. DNS查询获取到域名对应的目标服务器IP地址     3. TCP连接浏览器在确定目标服务器的IP地址后，经历三次握手建立TCP连接  4. 发送http">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://raw.githubusercontent.com/yuefei-su/My-DrawingBed/main/notes/27a0c690-bdf4-11eb-ab90-d9ae814b240d.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/yuefei-su/My-DrawingBed/main/notes/330fb770-bdf4-11eb-85f6-6fac77c0c9b3.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/yuefei-su/My-DrawingBed/main/notes/ad750790-bdf4-11eb-85f6-6fac77c0c9b3.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/yuefei-su/My-DrawingBed/main/notes/bbcb60f0-bdf4-11eb-ab90-d9ae814b240d.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/yuefei-su/My-DrawingBed/main/notes/c5fe0140-bdf4-11eb-ab90-d9ae814b240d.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/yuefei-su/My-DrawingBed/main/notes/db7bddd0-bdf4-11eb-85f6-6fac77c0c9b3.png">
+<meta property="article:published_time" content="2022-03-01T16:00:00.000Z">
+<meta property="article:modified_time" content="2022-03-03T03:07:18.752Z">
+<meta property="article:author" content="John Doe">
+<meta property="article:tag" content="Computer">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://raw.githubusercontent.com/yuefei-su/My-DrawingBed/main/notes/27a0c690-bdf4-11eb-ab90-d9ae814b240d.png">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+<meta name="generator" content="Hexo 5.4.1"><link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://example.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-Computer/01" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2022/03/02/computer/01/" class="article-date">
+  <time datetime="2022-03-01T16:00:00.000Z" itemprop="datePublished">2022-03-02</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/%E8%8B%8F%E8%B6%8A%E9%A3%9E/">苏越飞</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      输入URL到网页呈现
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <hr>
+<h1 id="输入URL到网页呈现"><a href="#输入URL到网页呈现" class="headerlink" title="输入URL到网页呈现"></a>输入URL到网页呈现</h1><h2 id="基本步骤"><a href="#基本步骤" class="headerlink" title="基本步骤"></a>基本步骤</h2><ol>
+<li><p>URL解析</p>
+</li>
+<li><p>DNS查询</p>
+</li>
+<li><p>TCP连接</p>
+</li>
+<li><p>HTTP请求</p>
+</li>
+<li><p>响应请求</p>
+</li>
+<li><p>页面渲染</p>
+</li>
+</ol>
+<h2 id="详细分析"><a href="#详细分析" class="headerlink" title="详细分析"></a>详细分析</h2><h3 id="1-URL解析"><a href="#1-URL解析" class="headerlink" title="1. URL解析"></a>1. URL解析</h3><p>首先判断是否是合法的URL，还是一个待搜索的关键词<br>如果是合法的URL，则进行URL解析   </p>
+<p><img src="https://raw.githubusercontent.com/yuefei-su/My-DrawingBed/main/notes/27a0c690-bdf4-11eb-ab90-d9ae814b240d.png">  </p>
+<h3 id="2-DNS查询"><a href="#2-DNS查询" class="headerlink" title="2. DNS查询"></a>2. DNS查询</h3><p>获取到域名对应的目标服务器IP地址 </p>
+<p><img src="https://raw.githubusercontent.com/yuefei-su/My-DrawingBed/main/notes/330fb770-bdf4-11eb-85f6-6fac77c0c9b3.png">  </p>
+<h3 id="3-TCP连接"><a href="#3-TCP连接" class="headerlink" title="3. TCP连接"></a>3. TCP连接</h3><p>浏览器在确定目标服务器的IP地址后，经历三次握手建立TCP连接</p>
+<p><img src="https://raw.githubusercontent.com/yuefei-su/My-DrawingBed/main/notes/ad750790-bdf4-11eb-85f6-6fac77c0c9b3.png"></p>
+<h3 id="4-发送http请求"><a href="#4-发送http请求" class="headerlink" title="4. 发送http请求"></a>4. 发送http请求</h3><p>建立tcp连接之后，就可以再此基础上通信了。<br><strong>浏览器</strong>发送http请求到目标服务器。请求内容包括：</p>
+<ul>
+<li>请求行(请求方法get/post、请求URL、http协议及版本)</li>
+<li>请求头/报文头</li>
+<li>请求主体  </li>
+</ul>
+<p><strong>常见http请求方法</strong></p>
+<ul>
+<li>GET: 向服务器获取数据；</li>
+<li>POST：将实体提交到指定的资源，通常会造成服务器资源的修改；</li>
+<li>PUT：上传文件，更新数据；</li>
+<li>DELETE：删除服务器上的对象；</li>
+<li>HEAD：获取报文首部，与GET相比，不返回报文主体部分；</li>
+<li>OPTIONS：询问支持的请求方法，用来跨域请求；</li>
+<li>CONNECT：要求在与代理服务器通信时建立隧道，使用隧道进行TCP通信；</li>
+<li>TRACE: 回显服务器收到的请求，主要⽤于测试或诊断。  </li>
+</ul>
+<p><strong>HTTP Request Header 常见的请求头：</strong></p>
+<ul>
+<li>Accept:浏览器能够处理的内容类型</li>
+<li>Accept-Charset:浏览器能够显示的字符集</li>
+<li>Accept-Encoding：浏览器能够处理的压缩编码</li>
+<li>Accept-Language：浏览器当前设置的语言</li>
+<li>Connection：浏览器与服务器之间连接的类型</li>
+<li>Cookie：当前页面设置的任何Cookie</li>
+<li>Host：发出请求的页面所在的域</li>
+<li>Referer：发出请求的页面的URL</li>
+<li><strong>User-Agent：浏览器的用户代理字符串</strong></li>
+</ul>
+<p><img src="https://raw.githubusercontent.com/yuefei-su/My-DrawingBed/main/notes/bbcb60f0-bdf4-11eb-ab90-d9ae814b240d.png"></p>
+<h3 id="5-响应请求"><a href="#5-响应请求" class="headerlink" title="5. 响应请求"></a>5. 响应请求</h3><p>当<strong>服务器</strong>接收到浏览器的请求之后，就会进行逻辑操作，处理完成之后返回一个HTTP响应消息，响应消息包括：</p>
+<ul>
+<li>响应行/状态行</li>
+<li>响应头/消息报头</li>
+<li>响应正文 </li>
+</ul>
+<p><strong>HTTP Responses Header 常见的响应头：</strong></p>
+<ul>
+<li>Date：表示消息发送的时间，时间的描述格式由rfc822定义</li>
+<li>server:服务器名称</li>
+<li>Connection：浏览器与服务器之间连接的类型</li>
+<li>Cache-Control：控制HTTP缓存</li>
+<li><strong>content-type:表示后面的文档属于什么MIME类型</strong></li>
+</ul>
+<p><img src="https://raw.githubusercontent.com/yuefei-su/My-DrawingBed/main/notes/c5fe0140-bdf4-11eb-ab90-d9ae814b240d.png"><br>在服务器响应之后，http默认开启长链接keep-alive。<br>当页面关闭之后，tcp连接则会经过四次挥手完成断开</p>
+<h3 id="6-页面渲染"><a href="#6-页面渲染" class="headerlink" title="6. 页面渲染"></a>6. 页面渲染</h3><p>当浏览器接收服务器响应的资源并进行解析：  </p>
+<ul>
+<li>查看响应头信息，根据不同的指示做出相应的处理。比如重定向、存储cookie、解压gzip、缓存资源等等。  </li>
+<li>查看响应头的Content-Type值，<strong>根据不同的资源类型采用不同的解析方式</strong>。</li>
+</ul>
+<p>页面渲染过程：</p>
+<ul>
+<li>解析 HTML，构建 <strong>DOM 树</strong></li>
+<li>解析 CSS ，生成 <strong>CSS 规则树</strong></li>
+<li>合并 DOM 树和 CSS 规则树，生成 <strong>render 树</strong></li>
+<li><strong>布局</strong> render 树（ Layout / reflow ），负责各元素尺寸、位置的计算</li>
+<li><strong>绘制</strong> render 树（ paint / repaint ），绘制页面像素信息</li>
+<li>浏览器会将各层的像素信息发送给 GPU，GPU 会将<strong>各层像素信息合成</strong>（ composite ），显示在屏幕上  </li>
+</ul>
+<p><img src="https://raw.githubusercontent.com/yuefei-su/My-DrawingBed/main/notes/db7bddd0-bdf4-11eb-85f6-6fac77c0c9b3.png"></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2022/03/02/computer/01/" data-id="cl13b480g000l283ugthugiz9" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Computer/" rel="tag">Computer</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2022/03/02/css/07/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          BFC
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2022/03/02/computer/02/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">GET和POST</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Categories</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/%E8%8B%8F%E8%B6%8A%E9%A3%9E/">苏越飞</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Computer/" rel="tag">Computer</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/css/" rel="tag">css</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/js/" rel="tag">js</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/Computer/" style="font-size: 10px;">Computer</a> <a href="/tags/css/" style="font-size: 10px;">css</a> <a href="/tags/js/" style="font-size: 20px;">js</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/03/">March 2022</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2022/03/02/css/01/">水平垂直居中</a>
+          </li>
+        
+          <li>
+            <a href="/2022/03/02/css/02/">盒子模型</a>
+          </li>
+        
+          <li>
+            <a href="/2022/03/02/css/03/">回流和重绘</a>
+          </li>
+        
+          <li>
+            <a href="/2022/03/02/css/04/">行内元素和块级元素</a>
+          </li>
+        
+          <li>
+            <a href="/2022/03/02/css/05/">CSS选择器及实现原理</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2022 John Doe<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+
+  
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+  </div>
+</body>
+</html>
