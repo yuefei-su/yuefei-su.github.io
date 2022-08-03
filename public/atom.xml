@@ -1,0 +1,294 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>SuYuefei’s Blog</title>
+  
+  <subtitle>苏越飞</subtitle>
+  <link href="https://suyuefei.gitee.io/atom.xml" rel="self"/>
+  
+  <link href="https://suyuefei.gitee.io/"/>
+  <updated>2022-03-24T13:29:38.048Z</updated>
+  <id>https://suyuefei.gitee.io/</id>
+  
+  <author>
+    <name>SuYuefei</name>
+    
+  </author>
+  
+  <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>scoped属性</title>
+    <link href="https://suyuefei.gitee.io/2021/10/17/vue/02/"/>
+    <id>https://suyuefei.gitee.io/2021/10/17/vue/02/</id>
+    <published>2021-10-16T16:00:00.000Z</published>
+    <updated>2022-03-24T13:29:38.048Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;scoped属性&quot;&gt;&lt;a href=&quot;#scoped属性&quot; class=&quot;headerlink&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="Vue" scheme="https://suyuefei.gitee.io/categories/Vue/"/>
+    
+    
+    <category term="Vue" scheme="https://suyuefei.gitee.io/tags/Vue/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Vue组件之间的通信方式</title>
+    <link href="https://suyuefei.gitee.io/2021/10/11/vue/01/"/>
+    <id>https://suyuefei.gitee.io/2021/10/11/vue/01/</id>
+    <published>2021-10-10T16:00:00.000Z</published>
+    <updated>2022-03-24T13:29:23.670Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;Vue组件之间的通信方式都有哪些？&quot;&gt;&lt;a href=&quot;#Vue组件之间的通信方式都有哪些？&quot; class=&quot;headerlink&quot; title=&quot;Vue组件之间的通信方式都有哪些？&quot;&gt;&lt;/a&gt;Vue组件之间的通信方式都有哪些？&lt;/h2&gt;&lt;h3</summary>
+        
+      
+    
+    
+    
+    <category term="Vue" scheme="https://suyuefei.gitee.io/categories/Vue/"/>
+    
+    
+    <category term="Vue" scheme="https://suyuefei.gitee.io/tags/Vue/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>水平垂直居中</title>
+    <link href="https://suyuefei.gitee.io/2021/08/06/css/01/"/>
+    <id>https://suyuefei.gitee.io/2021/08/06/css/01/</id>
+    <published>2021-08-05T16:00:00.000Z</published>
+    <updated>2022-03-24T13:28:20.645Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;水平垂直居中&quot;&gt;&lt;a href=&quot;#水平垂直居中&quot; class=&quot;headerlink&quot; title=&quot;水平垂直居中&quot;&gt;&lt;/a&gt;水平垂直居中&lt;/h2&gt;&lt;h3</summary>
+        
+      
+    
+    
+    
+    <category term="CSS学习笔记" scheme="https://suyuefei.gitee.io/categories/CSS%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
+    
+    
+    <category term="CSS" scheme="https://suyuefei.gitee.io/tags/CSS/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>布局方法</title>
+    <link href="https://suyuefei.gitee.io/2021/08/02/css/02/"/>
+    <id>https://suyuefei.gitee.io/2021/08/02/css/02/</id>
+    <published>2021-08-01T16:00:00.000Z</published>
+    <updated>2022-03-24T13:28:38.215Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;布局方法&quot;&gt;&lt;a href=&quot;#布局方法&quot; class=&quot;headerlink&quot; title=&quot;布局方法&quot;&gt;&lt;/a&gt;布局方法&lt;/h2&gt;&lt;h3 id=&quot;0-display和position&quot;&gt;&lt;a href=&quot;#0-display和position&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="CSS学习笔记" scheme="https://suyuefei.gitee.io/categories/CSS%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
+    
+    
+    <category term="CSS" scheme="https://suyuefei.gitee.io/tags/CSS/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>普通函数、箭头函数this指向和call、apply、bind</title>
+    <link href="https://suyuefei.gitee.io/2021/07/25/javascript/03/"/>
+    <id>https://suyuefei.gitee.io/2021/07/25/javascript/03/</id>
+    <published>2021-07-24T16:00:00.000Z</published>
+    <updated>2022-04-15T10:45:08.943Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;普通函数、箭头函数this指向和call、apply、bind&quot;&gt;&lt;a href=&quot;#普通函数、箭头函数this指向和call、apply、bind&quot; class=&quot;headerlink&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="JavaScript笔记" scheme="https://suyuefei.gitee.io/categories/JavaScript%E7%AC%94%E8%AE%B0/"/>
+    
+    
+    <category term="JavaScript" scheme="https://suyuefei.gitee.io/tags/JavaScript/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>事件循环机制(async和await)</title>
+    <link href="https://suyuefei.gitee.io/2021/07/20/javascript/04/"/>
+    <id>https://suyuefei.gitee.io/2021/07/20/javascript/04/</id>
+    <published>2021-07-19T16:00:00.000Z</published>
+    <updated>2022-04-15T10:45:11.499Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;事件循环机制&quot;&gt;&lt;a href=&quot;#事件循环机制&quot; class=&quot;headerlink&quot; title=&quot;事件循环机制&quot;&gt;&lt;/a&gt;事件循环机制&lt;/h2&gt;&lt;h3 id=&quot;1-是什么&quot;&gt;&lt;a href=&quot;#1-是什么&quot; class=&quot;headerlink&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="JavaScript笔记" scheme="https://suyuefei.gitee.io/categories/JavaScript%E7%AC%94%E8%AE%B0/"/>
+    
+    
+    <category term="JavaScript" scheme="https://suyuefei.gitee.io/tags/JavaScript/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Promise的理解</title>
+    <link href="https://suyuefei.gitee.io/2021/07/13/javascript/07/"/>
+    <id>https://suyuefei.gitee.io/2021/07/13/javascript/07/</id>
+    <published>2021-07-12T16:00:00.000Z</published>
+    <updated>2022-04-15T10:45:19.191Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;Promise的理解&quot;&gt;&lt;a href=&quot;#Promise的理解&quot; class=&quot;headerlink&quot; title=&quot;Promise的理解&quot;&gt;&lt;/a&gt;Promise的理解&lt;/h2&gt;&lt;h3 id=&quot;1-介绍&quot;&gt;&lt;a href=&quot;#1-介绍&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="JavaScript笔记" scheme="https://suyuefei.gitee.io/categories/JavaScript%E7%AC%94%E8%AE%B0/"/>
+    
+    
+    <category term="JavaScript" scheme="https://suyuefei.gitee.io/tags/JavaScript/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>原型和原型链</title>
+    <link href="https://suyuefei.gitee.io/2021/07/10/javascript/05/"/>
+    <id>https://suyuefei.gitee.io/2021/07/10/javascript/05/</id>
+    <published>2021-07-09T16:00:00.000Z</published>
+    <updated>2022-04-15T10:45:13.706Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;原型和原型链&quot;&gt;&lt;a href=&quot;#原型和原型链&quot; class=&quot;headerlink&quot; title=&quot;原型和原型链&quot;&gt;&lt;/a&gt;原型和原型链&lt;/h2&gt;&lt;h3 id=&quot;1-原型&quot;&gt;&lt;a href=&quot;#1-原型&quot; class=&quot;headerlink&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="JavaScript笔记" scheme="https://suyuefei.gitee.io/categories/JavaScript%E7%AC%94%E8%AE%B0/"/>
+    
+    
+    <category term="JavaScript" scheme="https://suyuefei.gitee.io/tags/JavaScript/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>字符串常用方法</title>
+    <link href="https://suyuefei.gitee.io/2021/07/06/javascript/02/"/>
+    <id>https://suyuefei.gitee.io/2021/07/06/javascript/02/</id>
+    <published>2021-07-05T16:00:00.000Z</published>
+    <updated>2022-04-15T10:45:06.844Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;字符串常用方法&quot;&gt;&lt;a href=&quot;#字符串常用方法&quot; class=&quot;headerlink&quot; title=&quot;字符串常用方法&quot;&gt;&lt;/a&gt;字符串常用方法&lt;/h2&gt;&lt;h3 id=&quot;0-属性-String-length&quot;&gt;&lt;a</summary>
+        
+      
+    
+    
+    
+    <category term="JavaScript笔记" scheme="https://suyuefei.gitee.io/categories/JavaScript%E7%AC%94%E8%AE%B0/"/>
+    
+    
+    <category term="JavaScript" scheme="https://suyuefei.gitee.io/tags/JavaScript/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>数组的常用方法</title>
+    <link href="https://suyuefei.gitee.io/2021/07/04/javascript/01/"/>
+    <id>https://suyuefei.gitee.io/2021/07/04/javascript/01/</id>
+    <published>2021-07-03T16:00:00.000Z</published>
+    <updated>2022-04-15T10:45:00.153Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;数组的常用方法&quot;&gt;&lt;a href=&quot;#数组的常用方法&quot; class=&quot;headerlink&quot; title=&quot;数组的常用方法&quot;&gt;&lt;/a&gt;数组的常用方法&lt;/h2&gt;&lt;h3 id=&quot;0-属性：Array-length&quot;&gt;&lt;a</summary>
+        
+      
+    
+    
+    
+    <category term="JavaScript笔记" scheme="https://suyuefei.gitee.io/categories/JavaScript%E7%AC%94%E8%AE%B0/"/>
+    
+    
+    <category term="JavaScript" scheme="https://suyuefei.gitee.io/tags/JavaScript/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>js数据类型检测</title>
+    <link href="https://suyuefei.gitee.io/2021/07/01/javascript/06/"/>
+    <id>https://suyuefei.gitee.io/2021/07/01/javascript/06/</id>
+    <published>2021-06-30T16:00:00.000Z</published>
+    <updated>2022-04-15T10:45:16.076Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;js数据类型检测&quot;&gt;&lt;a href=&quot;#js数据类型检测&quot; class=&quot;headerlink&quot; title=&quot;js数据类型检测&quot;&gt;&lt;/a&gt;js数据类型检测&lt;/h2&gt;&lt;h3 id=&quot;1-typeof&quot;&gt;&lt;a href=&quot;#1-typeof&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="JavaScript笔记" scheme="https://suyuefei.gitee.io/categories/JavaScript%E7%AC%94%E8%AE%B0/"/>
+    
+    
+    <category term="JavaScript" scheme="https://suyuefei.gitee.io/tags/JavaScript/"/>
+    
+  </entry>
+  
+</feed>
