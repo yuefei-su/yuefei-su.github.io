@@ -129,4 +129,6 @@ theme: hexo-theme-matery
 # Deployment
 ## Docs: https://hexo.io/docs/one-command-deployment
 deploy:
-  type: ''
+  type: git
+  repo: git@github.com:yuefei-su/yuefei-su.github.io.git
+  branch: master
